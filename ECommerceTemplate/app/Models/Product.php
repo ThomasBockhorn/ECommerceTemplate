@@ -16,12 +16,27 @@ class Product extends Model
     use HasFactory;
 
 
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'ProductName',
         'ProductDescription',
         'ProductCost'
     ];
 
+
+    /**
+     * @var string[]
+     */
+    protected $casts = [
+        'ProductCost' => 'float'
+    ];
+
+
+    /**
+     * @return Attribute
+     */
     protected function productCost(): Attribute
     {
         return Attribute::make(

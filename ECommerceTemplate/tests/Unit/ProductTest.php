@@ -78,5 +78,12 @@ class ProductTest extends TestCase
         $this->assertEquals(21.60, $product->ProductCost);
     }
 
+    public function test_to_see_if_product_cost_stays_float()
+    {
+        $product = $this->getValidProduct();
+
+        $this->assertIsFloat($product->ProductCost);
+    }
+
 
 }
