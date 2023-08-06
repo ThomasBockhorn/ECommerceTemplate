@@ -15,24 +15,20 @@ class ProductSale extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
         'ProductID',
         'ProductSaleQuantity',
-        'ProductSalePrice'
+        'ProductSalePrice',
     ];
 
     protected $casts = [
-        'ProductSalePrice' => 'float'
+        'ProductSalePrice' => 'float',
     ];
 
-    /**
-     * @return Attribute
-     */
     protected function productSalePrice(): Attribute
     {
         return Attribute::make(
-            set: fn(float $value) => number_format($value, 2, '.', ',')
+            set: fn (float $value) => number_format($value, 2, '.', ',')
         );
     }
 }
