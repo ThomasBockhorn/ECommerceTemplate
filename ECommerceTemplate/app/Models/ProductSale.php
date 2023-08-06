@@ -15,18 +15,13 @@ class ProductSale extends Model
 {
     use HasFactory;
 
-    /**
-     * @var string[]
-     */
+
     protected $fillable = [
         'ProductID',
         'ProductSaleQuantity',
         'ProductSalePrice'
     ];
 
-    /**
-     * @var string[]
-     */
     protected $casts = [
         'ProductSalePrice' => 'float'
     ];

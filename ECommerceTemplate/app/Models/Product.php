@@ -16,9 +16,6 @@ class Product extends Model
     use HasFactory;
 
 
-    /**
-     * @var string[]
-     */
     protected $fillable = [
         'ProductName',
         'ProductDescription',
@@ -26,9 +23,6 @@ class Product extends Model
     ];
 
 
-    /**
-     * @var string[]
-     */
     protected $casts = [
         'ProductCost' => 'float'
     ];
