@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use App\Models\Product;
 
 class ProductTest extends TestCase
 {
@@ -16,4 +15,15 @@ class ProductTest extends TestCase
         $this->assertTrue(class_exists(\App\Models\Product::class));
     }
 
+    /**
+     * @return void
+     */
+    public function test_property_model_has_product_productname(): void
+    {
+        $product = new \App\Models\Product();
+
+        $product->ProductName = 'Test Product';
+
+        $this->assertEquals('Test Product', $product->ProductName);
+    }
 }
