@@ -19,7 +19,7 @@ class ProductSaleFactory extends Factory
     public function definition(): array
     {
         return [
-            //'ProductID' => Product::pluck('id')->random(),
+            'ProductID' => Product::pluck('id')->random(),
             'ProductSaleQuantity' => $this->faker->randomNumber(2),
             'ProductSalePrice' => $this->faker->randomFloat(2, 0, 1000)
         ];
