@@ -51,17 +51,14 @@ class ProductTest extends TestCase
         $this->assertContains('ProductCost', $this->getValidProduct()->getFillable());
     }
 
-    /**
-     * @return void
-     */
-    public function test_product_model_productcost_property_has_two_decimal_places()
+    public function test_product_model_productcost_property_has_two_decimal_places(): void
     {
         $product = $this->getValidProduct();
 
         $this->assertEquals(21.60, $product->ProductCost);
     }
 
-    public function test_to_see_if_product_cost_stays_float()
+    public function test_to_see_if_product_cost_stays_float(): void
     {
         $product = $this->getValidProduct();
 
