@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+use App\Models\ProductSale;
 
 class ProductSaleTest extends TestCase
 {
@@ -11,6 +12,6 @@ class ProductSaleTest extends TestCase
      */
     public function test_productsale_exists(): void
     {
-        $this->assertTrue(class_exists(\App\Models\ProductSale::class));
+        $this->assertTrue(class_exists(ProductSale::class));
     }
 }
