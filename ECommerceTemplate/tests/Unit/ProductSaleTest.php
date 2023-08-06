@@ -41,14 +41,34 @@ class ProductSaleTest extends TestCase
 
     }
 
+    /**
+     * @return void
+     */
     public function test_if_productsalequantity_exists()
     {
         $this->assertContains('ProductSaleQuantity', $this->getValidProductSale()->getFillable());
     }
 
+    /**
+     * @return void
+     */
     public function test_if_productsaleprice_exists()
     {
         $this->assertContains('ProductSalePrice', $this->getValidProductSale()->getFillable());
+    }
+
+    public function test_if_productsale_price_is_a_float()
+    {
+        $this->getValidProductSale();
+
+        $this->assertIsFloat($this->getValidProductSale()->ProductSalePrice);
+    }
+
+    public function test_if_productsale_price_has_two_decimal_places()
+    {
+        $this->getValidProductSale();
+
+        $this->assertEquals(21.60, $this->getValidProductSale()->ProductSalePrice);
     }
 
 
