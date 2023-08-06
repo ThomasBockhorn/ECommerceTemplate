@@ -5,8 +5,24 @@ namespace Tests\Unit;
 use PHPUnit\Framework\TestCase;
 use App\Models\ProductSale;
 
+/**
+ *
+ */
 class ProductSaleTest extends TestCase
 {
+
+    /**
+     * @return ProductSale
+     */
+    protected function getValidProductSale(): ProductSale
+    {
+        $productSale = new ProductSale();
+        $productSale->ProductID = 1;
+        $productSale->ProductSaleQuantity = 1;
+        $productSale->ProductSalePrice = 21.5977;
+        return $productSale;
+    }
+
     /**
      * @return void
      */
@@ -14,4 +30,16 @@ class ProductSaleTest extends TestCase
     {
         $this->assertTrue(class_exists(ProductSale::class));
     }
+
+
+    /**
+     * @return void
+     */
+    public function test_to_see_if_productsale_productID_exists()
+    {
+        $this->assertContains('ProductID', $this->getValidProductSale()->getFillable());
+
+    }
+
+
 }
