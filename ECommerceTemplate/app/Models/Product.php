@@ -31,4 +31,9 @@ class Product extends Model
             set: fn (float $value) => number_format($value, 2, '.', ',')
         );
     }
+
+    public function productSales()
+    {
+        return $this->hasOne(ProductSale::class, 'ProductSaleID', 'id');
+    }
 }
