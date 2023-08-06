@@ -23,12 +23,21 @@ class ProductSale extends Model
 
     protected $casts = [
         'ProductSalePrice' => 'float',
+        'ProductSaleQuantity' => 'int',
     ];
 
     protected function productSalePrice(): Attribute
     {
         return Attribute::make(
-            set: fn (float $value) => number_format($value, 2, '.', ',')
+            set: fn (float $value) => number_format($value, 2, '.', ','),
+        );
+    }
+
+    protected function productSaleQuantity(): Attribute
+    {
+        return Attribute::make(
+            set: fn ($value) => max($value, 0),
+
         );
     }
 }
