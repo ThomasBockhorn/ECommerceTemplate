@@ -8,6 +8,9 @@ use \App\Models\Product;
 class ProductTest extends TestCase
 {
 
+    /**
+     * @return Product
+     */
     protected function getValidProduct(): Product
     {
         $product = new Product();
@@ -34,6 +37,14 @@ class ProductTest extends TestCase
     /**
      * @return void
      */
+    public function test_product_model_has_productname(): void
+    {
+        $this->assertContains('ProductName', $this->getValidProduct()->getFillable());
+    }
+
+    /**
+     * @return void
+     */
     public function test_product_model_has_property_productdescription(): void
     {
         $product = $this->getValidProduct();
@@ -41,6 +52,25 @@ class ProductTest extends TestCase
         $this->assertEquals('Test Product Description', $product->ProductDescription);
     }
 
+    /**
+     * @return void
+     */
+    public function test_product_has_productdescription_property(): void
+    {
+        $this->assertContains('ProductDescription', $this->getValidProduct()->getFillable());
+    }
+
+    /**
+     * @return void
+     */
+    public function test_product_has_productcost_property(): void
+    {
+        $this->assertContains('ProductCost', $this->getValidProduct()->getFillable());
+    }
+
+    /**
+     * @return void
+     */
     public function test_product_model_has_property_productcost(): void
     {
         $product = $this->getValidProduct();

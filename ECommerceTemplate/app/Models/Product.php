@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property mixed|string $ProductName
  * @property mixed|string $ProductDescription
+ * @property int|mixed    $ProductCost
  */
 class Product extends Model
 {
