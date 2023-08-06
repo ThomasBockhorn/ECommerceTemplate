@@ -16,7 +16,7 @@ class ProductTest extends TestCase
         $product = new Product();
         $product->ProductName = 'Test Product';
         $product->ProductDescription = 'Test Product Description';
-        $product->ProductCost = 20;
+        $product->ProductCost = 21.5977;
         return $product;
     }
     public function test_model_product_exists(): void
@@ -71,11 +71,11 @@ class ProductTest extends TestCase
     /**
      * @return void
      */
-    public function test_product_model_has_property_productcost(): void
+    public function test_product_model_productcost_property_has_two_decimal_places()
     {
         $product = $this->getValidProduct();
 
-        $this->assertEquals(20, $product->ProductCost);
+        $this->assertEquals(21.60, $product->ProductCost);
     }
 
 

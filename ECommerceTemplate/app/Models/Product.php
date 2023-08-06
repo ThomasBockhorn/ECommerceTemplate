@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,12 +15,17 @@ class Product extends Model
 {
     use HasFactory;
 
-    /**
-     * @var int|mixed
-     */
+
     protected $fillable = [
         'ProductName',
         'ProductDescription',
         'ProductCost'
     ];
+
+    protected function productCost(): Attribute
+    {
+        return Attribute::make(
+            set: fn(float $value) => number_format($value, 2, '.', ',')
+        );
+    }
 }
