@@ -41,5 +41,15 @@ class ProductSaleTest extends TestCase
 
     }
 
+    public function test_if_productsalequantity_exists()
+    {
+        $this->assertContains('ProductSaleQuantity', $this->getValidProductSale()->getFillable());
+    }
+
+    public function test_if_productsaleprice_exists()
+    {
+        $this->assertContains('ProductSalePrice', $this->getValidProductSale()->getFillable());
+    }
+
 
 }
