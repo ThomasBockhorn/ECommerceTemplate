@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\ProductSale;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -86,5 +87,11 @@ class ProductTest extends TestCase
         ]);
 
         $this->assertEquals($product->id, $productSale->ProductID);
+    }
+
+    public function test_to_see_if_product_image_has_one_to_many_relationship()
+    {
+        $this->assertTrue(method_exists(Product::class, 'productImage'));
+
     }
 }

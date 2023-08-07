@@ -29,4 +29,9 @@ class ProductImageTest extends TestCase
     {
         $this->assertContains('ProductImageURL', $this->getValidProductImage()->getFillable());
     }
+
+    public function test_to_see_if_product_has_a_one_to_many_relationship_with_product_image(): void
+    {
+        $this->assertTrue(method_exists(ProductImage::class, 'product'));
+    }
 }
