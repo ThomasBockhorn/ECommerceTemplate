@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class ProductImageTest extends TestCase
 {
-
     public function getValidProductImage(): ProductImage
     {
         return new ProductImage([
@@ -15,6 +14,7 @@ class ProductImageTest extends TestCase
             'ProductImageURL' => 'https://via.placeholder.com/150',
         ]);
     }
+
     public function test_product_image_exists(): void
     {
         $this->assertTrue(class_exists(ProductImage::class));
