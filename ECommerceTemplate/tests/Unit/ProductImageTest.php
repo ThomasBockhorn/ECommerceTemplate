@@ -24,4 +24,9 @@ class ProductImageTest extends TestCase
     {
         $this->assertContains('ProductID', $this->getValidProductImage()->getFillable());
     }
+
+    public function test_to_see_if_product_image_url_exists(): void
+    {
+        $this->assertContains('ProductImageURL', $this->getValidProductImage()->getFillable());
+    }
 }
