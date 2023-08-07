@@ -4,15 +4,14 @@ namespace Tests\Unit;
 
 use App\Models\Product;
 use App\Models\ProductSale;
-use Database\Factories\ProductFactory;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
+use Illuminate\Foundation\Testing\WithFaker;
 use PHPUnit\Framework\TestCase;
 
 class ProductTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
+
     protected function getValidProduct(): Product
     {
         $product = new Product();
@@ -77,13 +76,13 @@ class ProductTest extends TestCase
             'ProductName' => 'Test Product',
             'ProductDescription' => 'Test Product Description',
             'ProductCost' => 21.5977,
-            'ProductSaleID' => 1
+            'ProductSaleID' => 1,
         ]);
 
         $productSale = new ProductSale([
             'ProductID' => $product->id,
             'ProductSaleQuantity' => 1,
-            'ProductSalePrice' => 21.5977
+            'ProductSalePrice' => 21.5977,
         ]);
 
         $this->assertEquals($product->id, $productSale->ProductID);

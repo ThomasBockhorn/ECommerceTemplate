@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Product;
-use App\Models\ProductSale;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +20,7 @@ class ProductSaleFactory extends Factory
         return [
             'ProductID' => Product::pluck('id')->random(),
             'ProductSaleQuantity' => $this->faker->randomNumber(2),
-            'ProductSalePrice' => $this->faker->randomFloat(2, 0, 1000)
+            'ProductSalePrice' => $this->faker->randomFloat(2, 0, 1000),
         ];
     }
 }
