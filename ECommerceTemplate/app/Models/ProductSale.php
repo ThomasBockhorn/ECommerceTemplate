@@ -35,6 +35,7 @@ class ProductSale extends Model
 
     protected function productSaleQuantity(): Attribute
     {
+       //This is a custom cast that will not allow negative numbers to be entered into the database
         return Attribute::make(
             set: fn ($value) => max($value, 0),
 
