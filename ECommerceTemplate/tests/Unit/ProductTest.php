@@ -19,6 +19,7 @@ class ProductTest extends TestCase
         $product->ProductName = 'Test Product';
         $product->ProductDescription = 'Test Product Description';
         $product->ProductCost = 21.5977;
+        $product->ProductSaleID = 1;
 
         return $product;
     }
@@ -73,12 +74,7 @@ class ProductTest extends TestCase
 
     public function test_to_see_if_a_productsale_belongs_to_a_product(): void
     {
-        $product = new Product([
-            'ProductName' => 'Test Product',
-            'ProductDescription' => 'Test Product Description',
-            'ProductCost' => 21.5977,
-            'ProductSaleID' => 1,
-        ]);
+        $product = $this->getValidProduct();
 
         $productSale = new ProductSale([
             'ProductID' => $product->id,
@@ -89,9 +85,33 @@ class ProductTest extends TestCase
         $this->assertEquals($product->id, $productSale->ProductID);
     }
 
-    public function test_to_see_if_product_image_has_one_to_many_relationship()
+    public function test_to_see_if_product_has_one_to_one_relationship_with_productsale(): void
+    {
+        $this->assertTrue(method_exists(Product::class, 'productSale'));
+    }
+
+    public function test_to_see_if_product_image_has_one_to_many_relationship(): void
     {
         $this->assertTrue(method_exists(Product::class, 'productImage'));
 
+    }
+
+    public function test_to_see_if_product_has_many_product_images(): void
+    {
+        $product = new Product([
+            'ProductName' => 'Test Product',
+            'ProductDescription' => 'Test Product Description',
+            'ProductCost' => 21.5977,
+            'ProductSaleID' => 1,
+        ]);
+
+        $productImage = new ProductImage([
+            'ProductID' => $product->id,
+            'ProductImageName' => 'Test Image',
+            'ProductImageDescription' => 'Test Image Description',
+            'ProductImageURL' => 'https://via.placeholder.com/150',
+        ]);
+
+        $this->assertEquals($product->id, $productImage->ProductID);
     }
 }

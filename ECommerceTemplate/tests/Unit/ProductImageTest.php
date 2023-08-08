@@ -12,6 +12,8 @@ class ProductImageTest extends TestCase
         return new ProductImage([
             'ProductID' => 1,
             'ProductImageURL' => 'https://via.placeholder.com/150',
+            'ProductImageName' => 'Test Image',
+            'ProductImageDescription' => 'Test Image Description',
         ]);
     }
 
