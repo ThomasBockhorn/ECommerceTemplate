@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class ProductImageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'ProductID' => Product::pluck('id')->random(),
+            'ProductImageName' => $this->faker->word(),
+            'ProductImageDescription' => $this->faker->sentence(),
+            'ProductImageURL' => $this->faker->imageUrl(),
         ];
     }
 }
