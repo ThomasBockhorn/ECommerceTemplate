@@ -15,7 +15,7 @@ class ProductImage extends Model
         'ProductImageName',
         'ProductImageDescription',
         'ProductImageURL',
-        ];
+    ];
 
     public function product(): BelongsTo
     {
