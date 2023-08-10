@@ -21,7 +21,7 @@ class InvoiceFactory extends Factory
             'InvoiceNumber' => $this->faker->numberBetween(1, 100),
             'InvoiceDate' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'InvoiceTotal' => $this->faker->randomFloat(2, 0, 1000),
-            'CustomerID' => Customer::pluck('id')->random()
+            'CustomerID' => Customer::pluck('id')->random(),
         ];
     }
 }
