@@ -60,4 +60,12 @@ class CustomerTest extends TestCase
         $customer->CustomerZip = '12345';
         $this->assertEquals('12345', $customer->CustomerZip);
     }
+
+    public function test_if_a_customer_as_a_one_to_many_relationship_to_invoice(): void
+    {
+        $this->assertTrue(method_exists(Customer::class, 'invoice'));
+    }
+
+
+
 }

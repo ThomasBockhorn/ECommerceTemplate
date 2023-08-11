@@ -27,4 +27,9 @@ class Customer extends Model
         'CustomerState',
         'CustomerZip',
     ];
+
+    public function invoice()
+    {
+        return $this->hasMany(Invoice::class, 'CustomerID', 'id');
+    }
 }
