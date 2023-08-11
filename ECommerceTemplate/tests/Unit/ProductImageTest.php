@@ -27,6 +27,20 @@ class ProductImageTest extends TestCase
         $this->assertContains('ProductID', $this->getValidProductImage()->getFillable());
     }
 
+    public function test_to_see_if_productid_is_in_product_image_property(): void
+    {
+        $productImage = new ProductImage();
+        $productImage->ProductID = 1;
+        $this->assertEquals(1, $productImage->ProductID);
+    }
+
+    public function test_to_see_if_product_image_url_is_a_property(): void
+    {
+        $productImage = new ProductImage();
+        $productImage->ProductImageURL = 'https://via.placeholder.com/150';
+        $this->assertEquals('https://via.placeholder.com/150', $productImage->ProductImageURL);
+    }
+
     public function test_to_see_if_product_image_url_exists(): void
     {
         $this->assertContains('ProductImageURL', $this->getValidProductImage()->getFillable());

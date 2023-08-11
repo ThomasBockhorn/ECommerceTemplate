@@ -21,6 +21,4 @@ class Invoice extends Model
         'InvoiceTotal',
         'CustomerID',
     ];
-
-
 }
