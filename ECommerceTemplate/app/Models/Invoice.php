@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int|mixed $CustomerID
@@ -22,5 +23,8 @@ class Invoice extends Model
         'CustomerID',
     ];
 
-
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class, 'CustomerID', 'id');
+    }
 }

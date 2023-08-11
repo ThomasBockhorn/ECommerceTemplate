@@ -32,4 +32,10 @@ class InvoiceTest extends TestCase
         $invoice->InvoiceTotal = 1.00;
         $this->assertEquals(1.00, $invoice->InvoiceTotal);
     }
+
+    public function test_to_see_if_invoice_has_a_belongs_to_customer(): void
+    {
+        $this->assertTrue(method_exists(Invoice::class, 'customer'));
+    }
+
 }
