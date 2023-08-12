@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property mixed|string $CustomerName
@@ -28,7 +29,7 @@ class Customer extends Model
         'CustomerZip',
     ];
 
-    public function invoice()
+    public function invoice(): HasMany
     {
         return $this->hasMany(Invoice::class, 'CustomerID', 'id');
     }
