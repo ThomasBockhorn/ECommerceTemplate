@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CustomerShipping;
 use Illuminate\Database\Seeder;
 
 class CustomerShippingSeeder extends Seeder
@@ -11,6 +12,6 @@ class CustomerShippingSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        CustomerShipping::factory()->count(10)->create();
     }
 }
