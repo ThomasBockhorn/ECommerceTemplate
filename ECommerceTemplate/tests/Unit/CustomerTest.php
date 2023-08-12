@@ -65,7 +65,4 @@ class CustomerTest extends TestCase
     {
         $this->assertTrue(method_exists(Customer::class, 'invoice'));
     }
-
-
-
 }

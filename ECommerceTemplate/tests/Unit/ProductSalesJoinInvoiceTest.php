@@ -16,5 +16,4 @@ class ProductSalesJoinInvoiceTest extends TestCase
     {
         $this->assertTrue(method_exists(ProductSalesJoinInvoice::class, 'invoice'));
     }
-
 }
