@@ -10,8 +10,13 @@ class ProductSalesJoinInvoice extends Model
 {
     use HasFactory;
 
-    public function productsales(): HasMany
+    public function productSales(): HasMany
     {
         return $this->hasMany(ProductSale::class, 'ProductSaleID', 'id');
+    }
+
+    public function invoice(): HasMany
+    {
+        return $this->hasMany(Invoice::class, 'InvoiceID', 'id');
     }
 }
