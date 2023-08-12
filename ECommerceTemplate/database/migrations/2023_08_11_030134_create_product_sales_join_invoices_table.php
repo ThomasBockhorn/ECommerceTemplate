@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('product_sales_join_invoices', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('ProductSaleID');
+            $table->foreign('ProductSaleID')->references('id')->on('product_sales');
+            $table->unsignedBigInteger('InvoiceID');
+            $table->foreign('InvoiceID')->references('id')->on('invoices');
             $table->timestamps();
         });
     }

@@ -2,10 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Invoice;
+use App\Models\ProductSale;
+use App\Models\ProductSalesJoinInvoice;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductSalesJoinInvoice>
+ * @extends Factory<ProductSalesJoinInvoice>
  */
 class ProductSalesJoinInvoiceFactory extends Factory
 {
@@ -17,7 +20,8 @@ class ProductSalesJoinInvoiceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'ProductSaleID' => ProductSale::pluck('id')->random(),
+            'InvoiceID' => Invoice::pluck('id')->random(),
         ];
     }
 }

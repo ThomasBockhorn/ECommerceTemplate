@@ -10,6 +10,11 @@ class ProductSalesJoinInvoice extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'ProductSaleID',
+        'InvoiceID',
+    ];
+
     public function productSales(): HasMany
     {
         return $this->hasMany(ProductSale::class, 'ProductSaleID', 'id');
