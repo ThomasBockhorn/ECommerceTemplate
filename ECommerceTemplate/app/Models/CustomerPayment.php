@@ -35,6 +35,15 @@ class CustomerPayment extends Model
 	protected function customerPaymentCardNumber(): attribute
 	{
 		return Attribute::make(
+		  get: fn (string $value) => decrypt($value),
+		  set : fn (string $value) => encrypt($value)
+		);
+	}
+
+	protected function customerPaymentCVV(): attribute
+	{
+		return Attribute::make(
+		  get: fn (string $value) => decrypt($value),
 		  set : fn (string $value) => encrypt($value)
 		);
 	}
