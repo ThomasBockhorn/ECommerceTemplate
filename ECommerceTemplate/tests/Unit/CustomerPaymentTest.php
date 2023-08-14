@@ -14,7 +14,7 @@ class CustomerPaymentTest extends TestCase
         $customerpayment->CustomerPaymentCardNumber = 'Test CustomerPayment Description';
         $customerpayment->CustomerPaymentExpiration = 'Test CustomerPayment Description';
         $customerpayment->CustomerPaymentCVV = 'Test CustomerPayment Description';
-        $customerpayment->CustomerPaymentDefault = 'Test CustomerPayment Description';
+        $customerpayment->CustomerPaymentDefault = 1;
         $customerpayment->CustomerID = 'Test CustomerPayment Description';
 
         return $customerpayment;
