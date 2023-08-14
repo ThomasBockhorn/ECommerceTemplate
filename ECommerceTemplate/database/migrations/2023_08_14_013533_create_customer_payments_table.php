@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('CustomerPaymentCardNumber');
             $table->string('CustomerPaymentExpiration');
             $table->string('CustomerPaymentCVV');
-            $table->string('CustomerPaymentDefault');
+            $table->boolean('CustomerPaymentDefault');
             $table->unsignedBigInteger('CustomerID');
             $table->foreign('CustomerID')->references('id')->on('customers');
             $table->timestamps();
