@@ -10,7 +10,7 @@ class CustomerPaymentTest extends TestCase
     protected function getValidCustomerPayment(): CustomerPayment
     {
         $customerpayment = new CustomerPayment();
-        $customerpayment->CustomerPaymentName = 'Test CustomerPayment';
+        $customerpayment->CreditCardPaymentName = 'Test CustomerPayment';
         $customerpayment->CustomerPaymentCardNumber = 'Test CustomerPayment Description';
         $customerpayment->CustomerPaymentExpiration = 'Test CustomerPayment Description';
         $customerpayment->CustomerPaymentCVV = 'Test CustomerPayment Description';

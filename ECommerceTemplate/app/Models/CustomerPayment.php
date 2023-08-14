@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * @property mixed|string $CustomerPaymentName
+ * @property mixed|string $CreditCardPaymentName
  * @property mixed|string $CustomerPaymentCardNumber
  * @property mixed|string $CustomerPaymentExpiration
  * @property mixed|string $CustomerPaymentCVV
@@ -20,7 +20,7 @@ class CustomerPayment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'CustomerPaymentName',
+        'CreditCardPaymentName',
         'CustomerPaymentCardNumber',
         'CustomerPaymentExpiration',
         'CustomerPaymentCVV',

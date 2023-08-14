@@ -18,7 +18,7 @@ class CustomerPaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            'CustomerPaymentName' => $this->faker->name,
+            'CreditCardPaymentName' => $this->faker->company,
             'CustomerPaymentCardNumber' => $this->faker->creditCardNumber,
             'CustomerPaymentExpiration' => $this->faker->creditCardExpirationDate,
             'CustomerPaymentCVV' => $this->faker->randomNumber(3),
