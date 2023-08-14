@@ -23,6 +23,11 @@ class Invoice extends Model
         'CustomerID',
     ];
 
+	protected $casts = [
+	  'InvoiceTotal' => 'float',
+	  'InvoiceNumber' => 'int',
+	];
+
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class, 'CustomerID', 'id');
