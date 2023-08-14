@@ -19,14 +19,14 @@ class CustomerShippingFactory extends Factory
     {
         return [
             'CustomerShippingName' => $this->faker->name,
-			'CustomerShippingAddress' => $this->faker->streetAddress,
-			'CustomerShippingCity' => $this->faker->city,
-			'CustomerShippingState' => $this->faker->state,
-			'CustomerShippingZip' => $this->faker->postcode,
-			'CustomerShippingPhone' => $this->faker->phoneNumber,
-			'CustomerShippingEmail' => $this->faker->email,
-			'CustomerShippingDefault' => $this->faker->boolean,
-			'CustomerID' => Customer::pluck('id')->random(),
+            'CustomerShippingAddress' => $this->faker->streetAddress,
+            'CustomerShippingCity' => $this->faker->city,
+            'CustomerShippingState' => $this->faker->state,
+            'CustomerShippingZip' => $this->faker->postcode,
+            'CustomerShippingPhone' => $this->faker->phoneNumber,
+            'CustomerShippingEmail' => $this->faker->email,
+            'CustomerShippingDefault' => $this->faker->boolean,
+            'CustomerID' => Customer::pluck('id')->random(),
         ];
     }
 }

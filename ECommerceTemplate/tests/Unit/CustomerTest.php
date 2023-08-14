@@ -66,9 +66,9 @@ class CustomerTest extends TestCase
         $this->assertTrue(method_exists(Customer::class, 'invoice'));
     }
 
-	public function test_to_see_if_customer_shipping_method_is_in_customer_model(): void
-	{
-		$customer = new Customer();
-		$this->assertTrue(method_exists($customer, 'customerShipping'));
-	}
+    public function test_to_see_if_customer_shipping_method_is_in_customer_model(): void
+    {
+        $customer = new Customer();
+        $this->assertTrue(method_exists($customer, 'customerShipping'));
+    }
 }

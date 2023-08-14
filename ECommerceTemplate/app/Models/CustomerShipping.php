@@ -33,8 +33,8 @@ class CustomerShipping extends Model
         'CustomerID',
     ];
 
-	public function customer(): BelongsTo
-	{
-		return $this->belongsTo(Customer::class, 'CustomerID', 'id');
-	}
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class, 'CustomerID', 'id');
+    }
 }

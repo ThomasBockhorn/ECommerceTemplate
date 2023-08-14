@@ -35,8 +35,13 @@ class Customer extends Model
         return $this->hasMany(Invoice::class, 'CustomerID', 'id');
     }
 
-	public function customerShipping(): HasOne
-	{
-		return $this->hasOne(CustomerShipping::class, 'CustomerID', 'id');
-	}
+    public function customerShipping(): HasOne
+    {
+        return $this->hasOne(CustomerShipping::class, 'CustomerID', 'id');
+    }
+
+    public function customerPayment(): HasOne
+    {
+        return $this->hasOne(CustomerPayment::class, 'CustomerID', 'id');
+    }
 }
