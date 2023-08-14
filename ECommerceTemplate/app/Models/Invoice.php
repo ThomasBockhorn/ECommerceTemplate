@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -27,6 +28,13 @@ class Invoice extends Model
 	  'InvoiceTotal' => 'float',
 	  'InvoiceNumber' => 'int',
 	];
+
+	protected function invoiceTotal(): Attribute
+	{
+		return Attribute::make(
+		  set: fn (float $value) => number_format($value, 2, '.', ',')
+		);
+	}
 
     public function customer(): BelongsTo
     {
