@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('customer_payments', function (Blueprint $table) {
             $table->id();
+            $table->string('CustomerPaymentName');
+            $table->string('CustomerPaymentCardNumber');
+            $table->string('CustomerPaymentExpiration');
+            $table->string('CustomerPaymentCVV');
+            $table->string('CustomerPaymentDefault');
+            $table->unsignedBigInteger('CustomerID');
+            $table->foreign('CustomerID')->references('id')->on('customers');
             $table->timestamps();
         });
     }

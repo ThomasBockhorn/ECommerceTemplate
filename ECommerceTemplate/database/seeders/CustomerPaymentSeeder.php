@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CustomerPayment;
 use Illuminate\Database\Seeder;
 
 class CustomerPaymentSeeder extends Seeder
@@ -11,6 +12,6 @@ class CustomerPaymentSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        CustomerPayment::factory()->count(10)->create();
     }
 }
