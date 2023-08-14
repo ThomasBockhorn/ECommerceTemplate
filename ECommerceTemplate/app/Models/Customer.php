@@ -40,8 +40,8 @@ class Customer extends Model
         return $this->hasOne(CustomerShipping::class, 'CustomerID', 'id');
     }
 
-    public function customerPayment(): HasOne
+    public function customerPayment(): HasMany
     {
-        return $this->hasOne(CustomerPayment::class, 'CustomerID', 'id');
+        return $this->hasMany(CustomerPayment::class, 'CustomerID', 'id');
     }
 }
