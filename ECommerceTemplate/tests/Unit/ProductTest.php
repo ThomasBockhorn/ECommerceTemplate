@@ -126,5 +126,15 @@ class ProductTest extends TestCase
 
 	}
 
+	public function test_to_see_if_one_to_many_relationship_between_product_and_product_images(): void
+	{
+
+		$productImage = ProductImage::factory()
+		  ->for(Product::factory()->create())
+		  ->create();
+
+		$this->assertTrue($productImage->product()->exists());
+
+	}
 
 }
