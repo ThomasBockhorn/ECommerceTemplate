@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\Customer;
 use App\Models\CustomerShipping;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class CustomerShippingTest extends TestCase
 {
@@ -87,4 +87,13 @@ class CustomerShippingTest extends TestCase
         $customer = new Customer();
         $this->assertTrue(method_exists($customer, 'customerShipping'));
     }
+
+	public function test_to_see_if_customer_shipping_has_one_to_one_relationship_with_customer(): void
+	{
+		$customerShipping = CustomerShipping::factory()
+		  ->for(Customer::factory()->create())
+		  ->create();
+
+		$this->assertTrue($customerShipping->customer()->exists());
+	}
 }
