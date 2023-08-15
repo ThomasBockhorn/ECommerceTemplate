@@ -7,7 +7,7 @@ use App\Models\ProductImage;
 use App\Models\ProductSale;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class ProductTest extends TestCase
 {
@@ -114,4 +114,17 @@ class ProductTest extends TestCase
 
         $this->assertEquals($product->id, $productImage->ProductID);
     }
+
+	public function test_to_see_if_one_to_one_relationship_between_product_and_product_sales(): void
+	{
+
+		$productSale = ProductSale::factory()
+		  ->for(Product::factory()->create())
+		  ->create();
+
+		$this->assertTrue($productSale->product()->exists());
+
+	}
+
+
 }
