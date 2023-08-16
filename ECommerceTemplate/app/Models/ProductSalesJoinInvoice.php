@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ProductSalesJoinInvoice extends Model
@@ -15,13 +16,13 @@ class ProductSalesJoinInvoice extends Model
         'InvoiceID',
     ];
 
-    public function productSales(): HasMany
+    public function productSales(): BelongsToMany
     {
-        return $this->hasMany(ProductSale::class, 'ProductSaleID', 'id');
+        return $this->belongsToMany(ProductSale::class, 'ProductSaleID', 'id');
     }
 
-    public function invoice(): HasMany
+    public function invoices(): BelongsToMany
     {
-        return $this->hasMany(Invoice::class, 'InvoiceID', 'id');
+        return $this->belongsToMany(Invoice::class, 'InvoiceID', 'id');
     }
 }

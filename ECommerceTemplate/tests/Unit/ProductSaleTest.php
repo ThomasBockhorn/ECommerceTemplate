@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\Product;
 use App\Models\ProductSale;
+use App\Models\ProductSalesJoinInvoice;
 use Tests\TestCase;
 
 class ProductSaleTest extends TestCase
