@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\Customer;
 use App\Models\CustomerPayment;
+use App\Models\Invoice;
 use Tests\TestCase;
 
 class CustomerTest extends TestCase
@@ -89,5 +90,14 @@ class CustomerTest extends TestCase
 
 		$this->assertTrue($customerShipping->customer()->exists());
 		$this->assertEquals(1, $customerShipping->customer()->count());
+	}
+
+	public function test_to_see_if_there_is_a_one_to_many_relationship_between_customer_and_invoice(): void
+	{
+		$customer = Customer::factory()->create();
+		$invoice = Invoice::factory()->for($customer)->create();
+
+		$this->assertTrue($customer->invoice()->exists());
+		$this->assertEquals(1, $customer->invoice()->count());
 	}
 }

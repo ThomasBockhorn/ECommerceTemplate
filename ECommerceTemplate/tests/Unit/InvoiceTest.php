@@ -2,8 +2,9 @@
 
 namespace Tests\Unit;
 
+use App\Models\Customer;
 use App\Models\Invoice;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class InvoiceTest extends TestCase
 {
@@ -37,4 +38,13 @@ class InvoiceTest extends TestCase
     {
         $this->assertTrue(method_exists(Invoice::class, 'customer'));
     }
+
+	public function test_to_see_if_invoice_has_a_one_to_many_relationship_to_customer(): void
+	{
+		$invoice = Invoice::factory()
+		  ->for(Customer::factory()->create())
+		  ->create();
+
+		$this->assertTrue($invoice->customer()->exists());
+	}
 }
