@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property mixed|string $CustomerPaymentCVV
  * @property mixed|string $CustomerPaymentDefault
  * @property mixed|string $CustomerID
+ * @property mixed        $CustomerPaymentName
  */
 class CustomerPayment extends Model
 {

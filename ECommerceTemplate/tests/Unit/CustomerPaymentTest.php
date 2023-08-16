@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use App\Models\CustomerPayment;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class CustomerPaymentTest extends TestCase
 {
@@ -29,7 +29,7 @@ class CustomerPaymentTest extends TestCase
     {
         $customerpayment = $this->getValidCustomerPayment();
 
-        $this->assertEquals('Test CustomerPayment', $customerpayment->CustomerPaymentName);
+        $this->assertEquals('Test CustomerPayment', $customerpayment->CreditCardPaymentName);
     }
 
     public function test_to_see_if_CustomerPayment_has_CustomerPaymentCardNumber_property(): void
