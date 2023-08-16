@@ -81,4 +81,13 @@ class CustomerTest extends TestCase
 		$this->assertTrue($customerPayment->customer()->exists());
 		$this->assertEquals(1, $customerPayment->customer()->count());
 	}
+
+	public function test_to_see_if_customer_has_a_one_to_one_relationship_with_customer_shipping(): void
+	{
+		$customer = Customer::factory()->create();
+		$customerShipping = CustomerPayment::factory()->for($customer)->create();
+
+		$this->assertTrue($customerShipping->customer()->exists());
+		$this->assertEquals(1, $customerShipping->customer()->count());
+	}
 }
