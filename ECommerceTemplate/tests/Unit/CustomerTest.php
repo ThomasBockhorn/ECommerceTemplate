@@ -3,7 +3,8 @@
 namespace Tests\Unit;
 
 use App\Models\Customer;
-use PHPUnit\Framework\TestCase;
+use App\Models\CustomerPayment;
+use Tests\TestCase;
 
 class CustomerTest extends TestCase
 {
@@ -71,4 +72,13 @@ class CustomerTest extends TestCase
         $customer = new Customer();
         $this->assertTrue(method_exists($customer, 'customerShipping'));
     }
+
+	public function test_to_see_if_customer_has_many_customer_payments(): void
+	{
+		$customer = Customer::factory()->create();
+		$customerPayment = CustomerPayment::factory()->for($customer)->create();
+
+		$this->assertTrue($customerPayment->customer()->exists());
+		$this->assertEquals(1, $customerPayment->customer()->count());
+	}
 }

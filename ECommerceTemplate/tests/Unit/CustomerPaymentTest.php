@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Models\Customer;
 use App\Models\CustomerPayment;
 use Tests\TestCase;
 
@@ -69,6 +70,15 @@ class CustomerPaymentTest extends TestCase
 
     public function test_to_see_if_CustomerPayment_has_CustomerPaymentName_property_in_fillable(): void
     {
-        $this->assertContains('CustomerPaymentName', $this->getValidCustomerPayment()->getFillable());
+        $this->assertContains('CreditCardPaymentName', $this->getValidCustomerPayment()->getFillable());
     }
+
+	public function test_to_see_if_Customer_and_CustomerPayment_has_a_one_to_many_relationship(): void
+	{
+		$customerPayment = CustomerPayment::factory()
+		  ->for(Customer::factory()->create())
+		  ->create();
+
+		$this->assertTrue($customerPayment->customer()->exists());
+	}
 }
