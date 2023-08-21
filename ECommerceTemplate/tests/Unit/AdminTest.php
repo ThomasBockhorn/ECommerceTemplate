@@ -25,4 +25,17 @@ class AdminTest extends TestCase
         $admin->AdminPassword = 'password';
         $this->assertEquals('password', $admin->AdminPassword);
     }
+
+    public function test_to_see_if_admin_model_has_property_fillable(): void
+    {
+        $admin = new Admin();
+        $this->assertEquals(['AdminName', 'AdminPassword'], $admin->getFillable());
+    }
+
+    public function test_to_see_if_admin_model_has_property_hidden(): void
+    {
+        $admin = new Admin();
+        $this->assertEquals(['AdminPassword'], $admin->getHidden());
+    }
+
 }
