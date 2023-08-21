@@ -73,12 +73,12 @@ class CustomerPaymentTest extends TestCase
         $this->assertContains('CreditCardPaymentName', $this->getValidCustomerPayment()->getFillable());
     }
 
-	public function test_to_see_if_Customer_and_CustomerPayment_has_a_one_to_many_relationship(): void
-	{
-		$customerPayment = CustomerPayment::factory()
-		  ->for(Customer::factory()->create())
-		  ->create();
+    public function test_to_see_if_Customer_and_CustomerPayment_has_a_one_to_many_relationship(): void
+    {
+        $customerPayment = CustomerPayment::factory()
+            ->for(Customer::factory()->create())
+            ->create();
 
-		$this->assertTrue($customerPayment->customer()->exists());
-	}
+        $this->assertTrue($customerPayment->customer()->exists());
+    }
 }

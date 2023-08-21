@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int|mixed   $ProductID
@@ -50,8 +49,8 @@ class ProductSale extends Model
         return $this->belongsTo(Product::class, 'ProductID', 'id');
     }
 
-	public function productSalesJoinInvoices(): BelongsToMany
+    public function productSalesJoinInvoices(): BelongsToMany
     {
-		return $this->BelongsToMany(ProductSalesJoinInvoice::class, 'ProductSaleID', 'id');
-	}
+        return $this->BelongsToMany(ProductSalesJoinInvoice::class, 'ProductSaleID', 'id');
+    }
 }

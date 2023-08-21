@@ -30,26 +30,26 @@ class CustomerPayment extends Model
     ];
 
     protected $casts = [
-		'CustomerPaymentDefault' => 'boolean',
-	];
+        'CustomerPaymentDefault' => 'boolean',
+    ];
 
-	protected function customerPaymentCardNumber(): attribute
-	{
-		return Attribute::make(
-		  get: fn (string $value) => decrypt($value),
-		  set : fn (string $value) => encrypt($value)
-		);
-	}
+    protected function customerPaymentCardNumber(): attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => decrypt($value),
+            set : fn (string $value) => encrypt($value)
+        );
+    }
 
-	protected function customerPaymentCVV(): attribute
-	{
-		return Attribute::make(
-		  get: fn (string $value) => decrypt($value),
-		  set : fn (string $value) => encrypt($value)
-		);
-	}
+    protected function customerPaymentCVV(): attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => decrypt($value),
+            set : fn (string $value) => encrypt($value)
+        );
+    }
 
-	public function customer(): BelongsTo
+    public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class, 'CustomerID', 'id');
     }

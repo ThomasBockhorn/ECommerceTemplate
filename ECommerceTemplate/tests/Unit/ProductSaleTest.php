@@ -4,7 +4,6 @@ namespace Tests\Unit;
 
 use App\Models\Product;
 use App\Models\ProductSale;
-use App\Models\ProductSalesJoinInvoice;
 use Tests\TestCase;
 
 class ProductSaleTest extends TestCase
@@ -68,12 +67,12 @@ class ProductSaleTest extends TestCase
         $this->assertGreaterThan(-1, $this->getValidProductSale()->ProductSaleQuantity);
     }
 
-	public function test_to_see_if_a_productsale_belongs_to_a_product(): void
-	{
-		$product = Product::factory()->create();
-		$productSale = ProductSale::factory()->for($product)->create();
+    public function test_to_see_if_a_productsale_belongs_to_a_product(): void
+    {
+        $product = Product::factory()->create();
+        $productSale = ProductSale::factory()->for($product)->create();
 
-		$this->assertTrue($productSale->product()->exists());
-		$this->assertEquals(1, $productSale->product()->count());
-	}
+        $this->assertTrue($productSale->product()->exists());
+        $this->assertEquals(1, $productSale->product()->count());
+    }
 }

@@ -115,26 +115,25 @@ class ProductTest extends TestCase
         $this->assertEquals($product->id, $productImage->ProductID);
     }
 
-	public function test_to_see_if_one_to_one_relationship_between_product_and_product_sales(): void
-	{
+    public function test_to_see_if_one_to_one_relationship_between_product_and_product_sales(): void
+    {
 
-		$productSale = ProductSale::factory()
-		  ->for(Product::factory()->create())
-		  ->create();
+        $productSale = ProductSale::factory()
+            ->for(Product::factory()->create())
+            ->create();
 
-		$this->assertTrue($productSale->product()->exists());
+        $this->assertTrue($productSale->product()->exists());
 
-	}
+    }
 
-	public function test_to_see_if_one_to_many_relationship_between_product_and_product_images(): void
-	{
+    public function test_to_see_if_one_to_many_relationship_between_product_and_product_images(): void
+    {
 
-		$productImage = ProductImage::factory()
-		  ->for(Product::factory()->create())
-		  ->create();
+        $productImage = ProductImage::factory()
+            ->for(Product::factory()->create())
+            ->create();
 
-		$this->assertTrue($productImage->product()->exists());
+        $this->assertTrue($productImage->product()->exists());
 
-	}
-
+    }
 }

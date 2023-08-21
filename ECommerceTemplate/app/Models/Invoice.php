@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int|mixed $CustomerID
@@ -26,25 +25,25 @@ class Invoice extends Model
         'CustomerID',
     ];
 
-	protected $casts = [
-	  'InvoiceTotal' => 'float',
-	  'InvoiceNumber' => 'int',
-	];
+    protected $casts = [
+        'InvoiceTotal' => 'float',
+        'InvoiceNumber' => 'int',
+    ];
 
-	protected function invoiceTotal(): Attribute
-	{
-		return Attribute::make(
-		  set: fn (float $value) => number_format($value, 2, '.', ',')
-		);
-	}
+    protected function invoiceTotal(): Attribute
+    {
+        return Attribute::make(
+            set: fn (float $value) => number_format($value, 2, '.', ',')
+        );
+    }
 
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class, 'CustomerID', 'id');
     }
 
-	public function productSalesJoinInvoices(): BelongsToMany
-	{
-		return $this->belongsToMany(ProductSalesJoinInvoice::class, 'InvoiceID', 'id');
-	}
+    public function productSalesJoinInvoices(): BelongsToMany
+    {
+        return $this->belongsToMany(ProductSalesJoinInvoice::class, 'InvoiceID', 'id');
+    }
 }

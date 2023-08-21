@@ -2,8 +2,6 @@
 
 namespace Tests\Unit;
 
-use App\Models\Invoice;
-use App\Models\ProductSale;
 use App\Models\ProductSalesJoinInvoice;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -14,8 +12,8 @@ use Tests\TestCase;
  */
 class ProductSalesJoinInvoiceTest extends TestCase
 {
-
     use RefreshDatabase, WithFaker;
+
     public function test_to_see_if_product_sale_is_a_method_in_product_sale_join_invoice(): void
     {
         $this->assertTrue(method_exists(ProductSalesJoinInvoice::class, 'productSales'));

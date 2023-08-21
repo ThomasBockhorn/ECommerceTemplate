@@ -74,30 +74,30 @@ class CustomerTest extends TestCase
         $this->assertTrue(method_exists($customer, 'customerShipping'));
     }
 
-	public function test_to_see_if_customer_has_many_customer_payments(): void
-	{
-		$customer = Customer::factory()->create();
-		$customerPayment = CustomerPayment::factory()->for($customer)->create();
+    public function test_to_see_if_customer_has_many_customer_payments(): void
+    {
+        $customer = Customer::factory()->create();
+        $customerPayment = CustomerPayment::factory()->for($customer)->create();
 
-		$this->assertTrue($customerPayment->customer()->exists());
-		$this->assertEquals(1, $customerPayment->customer()->count());
-	}
+        $this->assertTrue($customerPayment->customer()->exists());
+        $this->assertEquals(1, $customerPayment->customer()->count());
+    }
 
-	public function test_to_see_if_customer_has_a_one_to_one_relationship_with_customer_shipping(): void
-	{
-		$customer = Customer::factory()->create();
-		$customerShipping = CustomerPayment::factory()->for($customer)->create();
+    public function test_to_see_if_customer_has_a_one_to_one_relationship_with_customer_shipping(): void
+    {
+        $customer = Customer::factory()->create();
+        $customerShipping = CustomerPayment::factory()->for($customer)->create();
 
-		$this->assertTrue($customerShipping->customer()->exists());
-		$this->assertEquals(1, $customerShipping->customer()->count());
-	}
+        $this->assertTrue($customerShipping->customer()->exists());
+        $this->assertEquals(1, $customerShipping->customer()->count());
+    }
 
-	public function test_to_see_if_there_is_a_one_to_many_relationship_between_customer_and_invoice(): void
-	{
-		$customer = Customer::factory()->create();
-		$invoice = Invoice::factory()->for($customer)->create();
+    public function test_to_see_if_there_is_a_one_to_many_relationship_between_customer_and_invoice(): void
+    {
+        $customer = Customer::factory()->create();
+        $invoice = Invoice::factory()->for($customer)->create();
 
-		$this->assertTrue($customer->invoice()->exists());
-		$this->assertEquals(1, $customer->invoice()->count());
-	}
+        $this->assertTrue($customer->invoice()->exists());
+        $this->assertEquals(1, $customer->invoice()->count());
+    }
 }

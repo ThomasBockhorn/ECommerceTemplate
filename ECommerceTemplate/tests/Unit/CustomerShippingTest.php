@@ -88,12 +88,12 @@ class CustomerShippingTest extends TestCase
         $this->assertTrue(method_exists($customer, 'customerShipping'));
     }
 
-	public function test_to_see_if_customer_shipping_has_one_to_one_relationship_with_customer(): void
-	{
-		$customerShipping = CustomerShipping::factory()
-		  ->for(Customer::factory()->create())
-		  ->create();
+    public function test_to_see_if_customer_shipping_has_one_to_one_relationship_with_customer(): void
+    {
+        $customerShipping = CustomerShipping::factory()
+            ->for(Customer::factory()->create())
+            ->create();
 
-		$this->assertTrue($customerShipping->customer()->exists());
-	}
+        $this->assertTrue($customerShipping->customer()->exists());
+    }
 }
