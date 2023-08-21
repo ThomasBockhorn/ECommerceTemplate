@@ -17,7 +17,8 @@ class AdminFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'AdminName' => $this->faker->name,
+            'AdminPassword' => $this->faker->password,
         ];
     }
 }

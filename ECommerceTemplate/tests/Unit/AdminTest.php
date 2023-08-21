@@ -18,4 +18,11 @@ class AdminTest extends TestCase
         $admin->AdminName = 'admin';
         $this->assertEquals('admin', $admin->AdminName);
     }
+
+    public function test_to_see_if_admin_model_has_property_adminpassword(): void
+    {
+        $admin = new Admin();
+        $admin->AdminPassword = 'password';
+        $this->assertEquals('password', $admin->AdminPassword);
+    }
 }
