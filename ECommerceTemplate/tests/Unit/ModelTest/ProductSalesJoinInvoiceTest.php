@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\ModelTest;
 
 use App\Models\ProductSalesJoinInvoice;
 use Illuminate\Foundation\Testing\RefreshDatabase;
