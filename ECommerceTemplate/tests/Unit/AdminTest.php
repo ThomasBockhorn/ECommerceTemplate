@@ -37,5 +37,4 @@ class AdminTest extends TestCase
         $admin = new Admin();
         $this->assertEquals(['AdminPassword'], $admin->getHidden());
     }
-
 }
