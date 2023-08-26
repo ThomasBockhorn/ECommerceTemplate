@@ -21,5 +21,26 @@ class ProductControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_to_see_if_product_create_route_works(): void
+    {
+        $response = $this->get('/products/create');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_to_see_if_product_edit_route_works(): void
+    {
+        $response = $this->get('/products/1/edit');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_to_see_if_product_delete_route_works(): void
+    {
+        $response = $this->delete('/products/1');
+
+        $response->assertStatus(200);
+    }
+
 
 }
