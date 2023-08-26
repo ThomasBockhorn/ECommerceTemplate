@@ -1,10 +1,12 @@
 <script>
-
+export default {
+    name: "create"
+}
 </script>
 
 <template>
     <div>
-        <h1>Product Update</h1>
+        <h1>Product Images Create</h1>
     </div>
 </template>
 
