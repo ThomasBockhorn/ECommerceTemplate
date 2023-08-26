@@ -6,17 +6,18 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): Response
     {
         $products = Product::all();
 
-        return Inertia::render('products.index', compact('products'));
+        return Inertia::render('Products/index', compact('products'));
     }
 
     /**
@@ -38,9 +39,9 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Product $product): Response
     {
-        //
+        return Inertia::render('Products/show', compact('product'));
     }
 
     /**
