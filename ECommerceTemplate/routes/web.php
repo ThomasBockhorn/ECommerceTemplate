@@ -26,9 +26,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/products', function(){
-    Route::resource('products', ProductController::class);
-});
+Route::resource('products', ProductController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
