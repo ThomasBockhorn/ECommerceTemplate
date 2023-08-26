@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductImageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::get('/', function () {
 });
 
 Route::resource('products', ProductController::class);
+Route::resource('product-images', ProductImageController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
