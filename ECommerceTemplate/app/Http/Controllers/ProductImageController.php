@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductImageRequest;
 use App\Http\Requests\UpdateProductImageRequest;
 use App\Models\ProductImage;
+use Inertia\Inertia;
 
 class ProductImageController extends Controller
 {
@@ -13,7 +14,9 @@ class ProductImageController extends Controller
      */
     public function index()
     {
-        //
+        $productImages = ProductImage::all();
+
+        return Inertia::render('ProductImages/index', compact('productImages'));
     }
 
     /**
@@ -21,7 +24,7 @@ class ProductImageController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('ProductImages/create');
     }
 
     /**
@@ -37,7 +40,7 @@ class ProductImageController extends Controller
      */
     public function show(ProductImage $productImage)
     {
-        //
+        return Inertia::render('ProductImages/show', compact('productImage'));
     }
 
     /**
@@ -45,7 +48,7 @@ class ProductImageController extends Controller
      */
     public function edit(ProductImage $productImage)
     {
-        //
+        return Inertia::render('ProductImages/edit', compact('productImage'));
     }
 
     /**

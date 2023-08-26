@@ -1,7 +1,5 @@
 <script>
-export default {
-    name: "update"
-}
+
 </script>
 
 <template>
