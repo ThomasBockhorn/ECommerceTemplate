@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('product_availabilities', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('ProductID');
+            $table->foreign('ProductID')->references('id')->on('customers');
+            $table->string('ProductAvailabilityDate');
+            $table->string('ProductStatus')->default('Available');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

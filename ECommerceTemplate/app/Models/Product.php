@@ -34,7 +34,7 @@ class Product extends Model
         );
     }
 
-    public function productSale(): hasOne
+    public function productSale(): HasOne
     {
         return $this->hasOne(ProductSale::class, 'ProductSaleID', 'id');
     }
@@ -42,5 +42,10 @@ class Product extends Model
     public function productImage(): HasMany
     {
         return $this->hasMany(ProductImage::class, 'ProductID', 'id');
+    }
+
+    public function productAvailability(): HasOne
+    {
+        return $this->hasOne(ProductAvailability::class, 'ProductAvailabilityID', 'id');
     }
 }
