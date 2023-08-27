@@ -27,4 +27,11 @@ class CustomerControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_to_see_if_customer_controller_delete_works(): void
+    {
+        $response = $this->delete('/customers/1');
+
+        $response->assertStatus(200);
+    }
+
 }
