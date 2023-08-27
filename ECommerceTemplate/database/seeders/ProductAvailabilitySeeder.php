@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ProductAvailability;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class ProductAvailabilitySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        ProductAvailability::factory()->count(10)->create();
     }
 }

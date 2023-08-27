@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class ProductAvailabilityFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'ProductID' => Product::pluck('id')->random(),
+            'ProductAvailabilityDate' => $this->faker->dateTimeBetween('now', '+1 year')->format('Y-m-d'),
+            'ProductStatus' => $this->faker->randomElement(['Available', 'Unavailable', 'Discontinued', 'Backorder', 'Preorder', 'SoldOut', 'OnSale']),
         ];
     }
 }
