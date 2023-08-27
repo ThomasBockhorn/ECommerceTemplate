@@ -20,6 +20,11 @@ class ProductAvailabilityTest extends TestCase
         $this->assertEquals('Available', $productAvailability->ProductStatus->value);
     }
 
+    public function test_to_see_if_product_availability_has_a_belongs_to_product(): void
+    {
+        $this->assertTrue(method_exists(ProductAvailability::class, 'product'));
+    }
+
 
 
 }
