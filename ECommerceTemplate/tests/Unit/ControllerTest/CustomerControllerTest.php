@@ -20,4 +20,11 @@ class CustomerControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_to_see_if_customer_controller_edit_works(): void
+    {
+        $response = $this->get('/customers/1/edit');
+
+        $response->assertStatus(200);
+    }
+
 }
