@@ -13,7 +13,7 @@ class CustomerPaymentController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
