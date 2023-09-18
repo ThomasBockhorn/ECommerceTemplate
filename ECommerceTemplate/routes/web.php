@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CustomerPaymentController;
+use App\Http\Controllers\CustomerShippingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,7 @@ Route::resource('products', ProductController::class);
 Route::resource('product-images', ProductImageController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('customer-payments', CustomerPaymentController::class);
+Route::resource('customer-shipping', CustomerShippingController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
