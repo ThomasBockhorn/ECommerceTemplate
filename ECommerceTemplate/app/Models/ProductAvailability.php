@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int|mixed    $ProductID
-* @property mixed|string $ProductAvailabilityDate
+ * @property mixed|string $ProductAvailabilityDate
  * @property mixed|string $ProductStatus
  */
 class ProductAvailability extends Model
@@ -23,7 +23,7 @@ class ProductAvailability extends Model
     ];
 
     protected $casts = [
-        'ProductStatus' => ProductStatusEnum::class
+        'ProductStatus' => ProductStatusEnum::class,
     ];
 
     public function product(): BelongsTo

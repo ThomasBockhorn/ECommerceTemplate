@@ -31,7 +31,4 @@ class ProductAvailabilityTest extends TestCase
     {
         $this->assertTrue(method_exists(ProductAvailability::class, 'product'));
     }
-
-
-
 }

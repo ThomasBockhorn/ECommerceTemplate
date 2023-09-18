@@ -40,5 +40,4 @@ class ProductImageControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
-
 }

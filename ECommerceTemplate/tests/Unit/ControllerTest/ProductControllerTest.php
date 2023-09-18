@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\ControllerTest;
 
-
 use Tests\TestCase;
 
 class ProductControllerTest extends TestCase
@@ -41,6 +40,4 @@ class ProductControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
-
-
 }
