@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CustomerPaymentController;
 use App\Http\Controllers\CustomerShippingController;
@@ -43,6 +44,7 @@ Route::resource('invoices', InvoiceController::class);
 Route::resource('product-availability', ProductAvailabilityController::class);
 Route::resource('product-sales', ProductSaleController::class);
 Route::resource('product-sales-join-invoice', ProductSalesJoinInvoiceController::class);
+Route::resource('admin', AdminController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
