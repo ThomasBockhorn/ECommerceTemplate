@@ -7,6 +7,7 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProductAvailabilityController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
+use App\Http\Controllers\ProductSaleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,7 @@ Route::resource('customer-payments', CustomerPaymentController::class);
 Route::resource('customer-shipping', CustomerShippingController::class);
 Route::resource('invoices', InvoiceController::class);
 Route::resource('product-availability', ProductAvailabilityController::class);
+Route::resource('product-sales', ProductSaleController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
